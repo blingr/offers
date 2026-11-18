@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wiener Supermarkt-Angebote</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <h1>🛒 Wiener Supermarkt-Angebote</h1>
+      <div class="meta" id="meta">lädt…</div>
+    </div>
+  </header>
+
+  <section class="controls">
+    <div class="controls-inner">
+      <input type="search" id="search" placeholder="Produkt suchen (z. B. Milch, Kaffee, Bier)…" autocomplete="off">
+      <label class="control">
+        Sortieren
+        <select id="sort">
+          <option value="discount">Rabatt %</option>
+          <option value="price">Preis aufsteigend</option>
+          <option value="price_desc">Preis absteigend</option>
+          <option value="valid_to">Gültig bis</option>
+          <option value="name">Name</option>
+        </select>
+      </label>
+      <label class="control">
+        Min. Rabatt
+        <span class="range-wrap">
+          <input type="range" id="minDiscount" min="0" max="70" step="5" value="0">
+          <span id="minDiscountVal">0%</span>
+        </span>
+      </label>
+    </div>
+    <div class="chip-row">
+      <span class="chip-label">Kategorien</span>
+      <div class="chips cat" id="categories"></div>
+    </div>
+    <div class="chip-row">
+      <span class="chip-label">Märkte</span>
+      <div class="chips" id="retailers"></div>
+    </div>
+  </section>
+
+  <section class="actions" id="actionsSection" hidden>
+    <div class="actions-inner">
+      <div class="actions-head">
+        <h2>🔥 Aktuelle Aktionen</h2>
+        <span class="actions-sub">die größten Rabatte gerade jetzt (ab −25 %)</span>
+      </div>
+      <div class="actions-strip" id="actionsStrip"></div>
+    </div>
+  </section>
+
+  <main>
+    <div class="result-info" id="resultInfo"></div>
+    <div class="grid" id="grid"></div>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
